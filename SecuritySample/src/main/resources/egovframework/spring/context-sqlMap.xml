@@ -9,5 +9,4 @@
 		<property name="configLocation" value="classpath:/egovframework/sqlmap/example/sql-map-config.xml"/>
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
-
 </beans>
