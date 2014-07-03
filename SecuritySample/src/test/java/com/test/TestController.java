@@ -4,6 +4,15 @@ public class TestController {
 	
 	private String name = "";
 	private int age = 0;
+	private String cellPhoneNum = "";
+
+	public String getCellPhoneNum() {
+		return cellPhoneNum;
+	}
+
+	public void setCellPhoneNum(String cellPhoneNum) {
+		this.cellPhoneNum = cellPhoneNum;
+	}
 
 	public String getName() {
 		return name;
