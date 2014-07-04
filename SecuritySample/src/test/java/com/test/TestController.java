@@ -6,6 +6,7 @@ public class TestController {
 	private int age = 0;
 	private String sex = "femail";
 	private String cellPhoneNum = "";
+	private String recvPhoneNum = "";
 
 	public String getName() {
 		return name;
@@ -38,5 +39,14 @@ public class TestController {
 	public void setCellPhoneNum(String cellPhoneNum) {
 		this.cellPhoneNum = cellPhoneNum;
 	}
+
+	public String getRecvPhoneNum() {
+		return recvPhoneNum;
+	}
+
+	public void setRecvPhoneNum(String recvPhoneNum) {
+		this.recvPhoneNum = recvPhoneNum;
+	}
+	
 	
 }
