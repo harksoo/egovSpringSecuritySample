@@ -7,14 +7,6 @@ public class TestController {
 	private String sex = "femail";
 	private String cellPhoneNum = "";
 
-	public String getCellPhoneNum() {
-		return cellPhoneNum;
-	}
-
-	public void setCellPhoneNum(String cellPhoneNum) {
-		this.cellPhoneNum = cellPhoneNum;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -39,6 +31,12 @@ public class TestController {
 		this.sex = sex;
 	}
 	
-	
+	public String getCellPhoneNum() {
+		return cellPhoneNum;
+	}
+
+	public void setCellPhoneNum(String cellPhoneNum) {
+		this.cellPhoneNum = cellPhoneNum;
+	}
 	
 }
