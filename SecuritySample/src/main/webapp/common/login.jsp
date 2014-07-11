@@ -59,7 +59,7 @@ function fncLogin() {
 						 	value='<c:out value="${SPRING_SECURITY_LAST_USERNAME}"/>'
 						 	</c:if>
 							style="width:180px;height:19px" required="required" maxlength="50" 	
-						>						
+						>
 					</td>
 				</tr>
 				<tr>
@@ -70,6 +70,12 @@ function fncLogin() {
 						<input type="password" name="j_password" style="width:180px;height:19px" required="required" maxlength="50" 
 						onkeypress="if(event.keyCode==13) fncLogin()">
 					</td> 
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center" height="25">
+						remember me <input type='checkbox' name='_spring_security_remember_me'/>
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center" height="25">

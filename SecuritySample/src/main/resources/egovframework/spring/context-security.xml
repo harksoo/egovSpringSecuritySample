@@ -31,16 +31,29 @@
 		<intercept-url pattern="/sample/update*" access="ROLE_ADMIN" />
 		<intercept-url pattern="/sample/delete*" access="ROLE_ADMIN" />
 		<intercept-url pattern="/**" access="ROLE_USER" />
+		<intercept-url pattern="/sample/update*" access="ROLE_ADMIN" requires-channel="https"/>
+		 -->
+		
+		<!-- 영역의 채널 설정
+		<intercept-url pattern="/sample/update*" requires-channel="https"/>
 		 -->
 		
 		<form-login login-page="/common/login.jsp" authentication-failure-url="/common/login.jsp?fail=true"/>
-		<logout logout-success-url="/common/logout.jsp"/>
+		<logout logout-success-url="/common/logout.jsp" />
 		
 		<anonymous/>
+		
+		<session-management>
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</session-management>
 
 		
 		<!-- for authorization -->
 		<custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="filterSecurityInterceptor"/>
+
+
+		<remember-me key="myAppKey" />
+
 
 	</http>
 	

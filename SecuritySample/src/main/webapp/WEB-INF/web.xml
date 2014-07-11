@@ -34,6 +34,12 @@
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+    <!-- session manager -->
+    <listener>
+    	<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+    </listener>
+    
     <!--  -->
     
 	<context-param>
@@ -73,8 +79,20 @@
 		<error-code>404</error-code>
 		<location>/common/error.jsp</location>
 	</error-page>
+	
+	<!-- 
+		org.springframework.web.servlet.handler.SimpleMappingExceptionResolver
+		를 사용시 위의 설정된 페이지가 먼저 호출되고, 그 이후  web.xml의 에러 페이지가 호출이 되나,
+		클라이언트에게 제공하는 것은 먼저 호출한 페이지다.
+		
+		springMVC에서 페이지가 호출 후에 클라이언트에게 응답처리를 바로 하는 구조임. 
+		그 이후 롤에 따라서 web.xml이 호출이 되나 클라이언트에게는 전송하지 못한다.   
+	-->
+	<!-- 
 	<error-page>
 		<error-code>500</error-code>
 		<location>/common/error.jsp</location>
 	</error-page>
+	 -->
+
 </web-app>
