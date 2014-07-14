@@ -44,7 +44,9 @@
 		<anonymous/>
 		
 		<session-management>
-			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+			<!-- error-if-maximum-exceeded="false" 이면 이전 로그인 정보는 무효화 되고, 새로 로그인한 정보로 수정 된다. -->
+			<!-- <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"  /> -->
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="false"  />
 		</session-management>
 
 		
