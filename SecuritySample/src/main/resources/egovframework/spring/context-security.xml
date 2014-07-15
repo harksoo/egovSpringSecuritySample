@@ -185,6 +185,8 @@
 		<beans:property name="resourceType" value="method"/>
 	</beans:bean>
 	
+	<!-- 세션 만료 제어 -->
+	<beans:bean id="sessionDestoryListener" class="egovframework.rte.cmmn.security.listener.SessionDestoryListener" />
 	
 	
 </beans:beans>
