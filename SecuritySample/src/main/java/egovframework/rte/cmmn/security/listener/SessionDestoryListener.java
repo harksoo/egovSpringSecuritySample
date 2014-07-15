@@ -8,6 +8,10 @@ import org.springframework.security.core.session.SessionDestroyedEvent;
 
 // user session이 종료 시 호출이 된다.
 // session 만료, 로그아웃 처리 시...
+
+// commit testing 1
+// commit testing 2
+
 public class SessionDestoryListener implements ApplicationListener<SessionDestroyedEvent> {
 
 	@Override
