@@ -8,9 +8,6 @@ import javax.sql.DataSource;
 import egovframework.rte.improved.security.userdetails.EgovUserDetails;
 import egovframework.rte.improved.security.userdetails.jdbc.EgovUsersByUsernameMapping;
 
-
-// commit testing 4
-
 public class EgovUserDetailsMapping extends EgovUsersByUsernameMapping {
 
     /**
