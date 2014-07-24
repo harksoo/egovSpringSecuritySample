@@ -93,6 +93,7 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>
 		    <version>${spring.maven.artifact.version}</version>
+		    <scope>test</scope>
         </dependency>
 		
         <dependency>
