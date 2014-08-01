@@ -182,9 +182,10 @@ public class EgovBBSAttributeManageController {
      */
     @IncludedInfo(name="게시판속성관리",order = 180 ,gid = 40)
     @RequestMapping("/cop/bbs/SelectBBSMasterInfs.do")
-    public String selectBBSMasterInfs(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
+    public String selectBBSMasterInfs(
+    		@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
 	boardMasterVO.setPageUnit(propertyService.getInt("pageUnit"));
-	boardMasterVO.setPageSize(propertyService.getInt("pageSize"));
+	boardMasterVO.setPageSize(propertyService.getInt("pageSize")); // 화면에 보여줄 페이지 범위 1 ~10(->)
 
 	PaginationInfo paginationInfo = new PaginationInfo();
 	
@@ -217,7 +218,8 @@ public class EgovBBSAttributeManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/bbs/SelectBBSMasterInf.do")
-    public String selectBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO searchVO, ModelMap model) throws Exception {
+    public String selectBBSMasterInf(
+    		@ModelAttribute("searchVO") BoardMasterVO searchVO, ModelMap model) throws Exception {
 	BoardMasterVO vo = bbsAttrbService.selectBBSMasterInf(searchVO);
 
 	model.addAttribute("result", vo);
@@ -258,7 +260,9 @@ public class EgovBBSAttributeManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/bbs/UpdateBBSMasterInf.do")
-    public String updateBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, @ModelAttribute("boardMaster") BoardMaster boardMaster,
+    public String updateBBSMasterInf(
+    		@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, 
+    		@ModelAttribute("boardMaster") BoardMaster boardMaster,
 	    BindingResult bindingResult, ModelMap model) throws Exception {
 
 	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
@@ -291,8 +295,10 @@ public class EgovBBSAttributeManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/bbs/DeleteBBSMasterInf.do")
-    public String deleteBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, @ModelAttribute("boardMaster") BoardMaster boardMaster,
-	    SessionStatus status) throws Exception {
+    public String deleteBBSMasterInf(
+    		@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, 
+    		@ModelAttribute("boardMaster") BoardMaster boardMaster,
+    		SessionStatus status) throws Exception {
 
 	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 	Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
@@ -314,7 +320,8 @@ public class EgovBBSAttributeManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/bbs/SelectBBSMasterInfsPop.do")
-    public String selectBBSMasterInfsPop(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
+    public String selectBBSMasterInfsPop(
+    		@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
 	boardMasterVO.setPageUnit(propertyService.getInt("pageUnit"));
 	boardMasterVO.setPageSize(propertyService.getInt("pageSize"));
 

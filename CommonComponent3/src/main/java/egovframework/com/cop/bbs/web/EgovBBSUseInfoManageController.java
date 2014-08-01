@@ -46,16 +46,12 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 @Controller
 public class EgovBBSUseInfoManageController {
-	
-	 
-	 
 
     @Resource(name = "EgovBBSUseInfoManageService")
     private EgovBBSUseInfoManageService bbsUseService;
 
     @Resource(name = "propertiesService")
     protected EgovPropertyService propertyService;
-    
 
     @Autowired
     private DefaultBeanValidator beanValidator;
@@ -74,7 +70,9 @@ public class EgovBBSUseInfoManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/com/deleteBBSUseInf.do")
-    public String deleteBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("bdUseInf") BoardUseInf bdUseInf,
+    public String deleteBBSUseInf(
+    		@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, 
+    		@ModelAttribute("bdUseInf") BoardUseInf bdUseInf,
 	    SessionStatus status, ModelMap model) throws Exception {
 
 	//LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
@@ -97,7 +95,8 @@ public class EgovBBSUseInfoManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/com/addBBSUseInf.do")
-    public String addBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
+    public String addBBSUseInf(
+    		@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
     	
     	if(EgovComponentChecker.hasComponent("EgovCommunityManageService")){//2011.09.15
     		model.addAttribute("useCommunity", "true");
@@ -121,8 +120,12 @@ public class EgovBBSUseInfoManageController {
      * @throws Exception
      */
     @RequestMapping("/cop/com/insertBBSUseInf.do")
-    public String insertBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
-	    BindingResult bindingResult, @CommandMap Map<String, Object> commandMap, SessionStatus status, ModelMap model) throws Exception {
+    public String insertBBSUseInf(
+    		@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, 
+    		@ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
+    		BindingResult bindingResult, 
+    		@CommandMap Map<String, Object> commandMap, 
+    		SessionStatus status, ModelMap model) throws Exception {
 
 	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 	Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
